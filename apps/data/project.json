@@ -7,6 +7,48 @@
   "tags": [],
   "targets": {
     "build": {
+      "executor": "@angular-architects/native-federation:build",
+      "defaultConfiguration": "production",
+      "options": {
+        "cacheExternalArtifacts": true,
+        "tsConfig": "apps/data/tsconfig.federation.json"
+      },
+      "configurations": {
+        "production": {
+          "target": "data:esbuild:production"
+        },
+        "development": {
+          "target": "data:esbuild:development",
+          "dev": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@angular-architects/native-federation:build",
+      "options": {
+        "target": "data:serve-original:development",
+        "tsConfig": "apps/data/tsconfig.federation.json",
+        "rebuildDelay": 500,
+        "cacheExternalArtifacts": true,
+        "dev": true,
+        "devServer": true,
+        "port": 0
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "data:build",
+        "port": 4202,
+        "staticFilePath": "dist/apps/data/browser",
+        "spa": true
+      }
+    },
+    "esbuild": {
       "executor": "@angular/build:application",
       "outputs": [
         "{options.outputPath}"
@@ -24,6 +66,9 @@
         ],
         "styles": [
           "apps/data/src/styles.css"
+        ],
+        "polyfills": [
+          "es-module-shims"
         ]
       },
       "configurations": {
@@ -49,7 +94,7 @@
         }
       }
     },
-    "serve": {
+    "serve-original": {
       "continuous": true,
       "executor": "@angular/build:dev-server",
       "defaultConfiguration": "development",
@@ -58,24 +103,11 @@
       },
       "configurations": {
         "production": {
-          "buildTarget": "data:build:production"
+          "buildTarget": "data:esbuild:production"
         },
         "development": {
-          "buildTarget": "data:build:development"
+          "buildTarget": "data:esbuild:development"
         }
-      }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint"
-    },
-    "serve-static": {
-      "continuous": true,
-      "executor": "@nx/web:file-server",
-      "options": {
-        "buildTarget": "data:build",
-        "port": 4202,
-        "staticFilePath": "dist/apps/data/browser",
-        "spa": true
       }
     }
   }
