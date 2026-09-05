@@ -25,3 +25,13 @@
   color: #1746d1;
   font-weight: 600;
 }
+
+@media (max-width: 768px) {
+  .shell-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .shell-content {
+    padding: 20px 16px;
+  }
+}

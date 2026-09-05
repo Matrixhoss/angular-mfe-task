@@ -55,3 +55,20 @@
 .sidebar__label small {
   font-size: 0.75rem;
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    padding: 8px;
+    border-right: 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .sidebar__nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .sidebar__link {
+    min-width: max-content;
+  }
+}

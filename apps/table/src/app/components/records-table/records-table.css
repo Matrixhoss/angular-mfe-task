@@ -1,11 +1,12 @@
 .table-container {
-  overflow: hidden;
+  overflow-x: auto;
   border: 1px solid #dfe3eb;
   border-radius: 8px;
 }
 
 .records-table {
   width: 100%;
+  min-width: 700px;
   border-collapse: collapse;
   background: white;
 }
