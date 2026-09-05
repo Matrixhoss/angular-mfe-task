@@ -1,0 +1,41 @@
+<div class="pagination">
+  <p>
+    Showing {{ firstVisibleRecord() }} to {{ lastVisibleRecord() }} of
+    {{ totalRecords() }} records
+  </p>
+
+  <nav class="pagination-controls" aria-label="Table pagination">
+    <button
+      class="pagination-button"
+      type="button"
+      aria-label="Previous page"
+      [disabled]="currentPage() === 1"
+      (click)="goToPreviousPage()"
+    >
+      &lsaquo;
+    </button>
+
+    @for (page of pages(); track page) {
+      <button
+        class="pagination-button"
+        type="button"
+        [class.pagination-button-active]="currentPage() === page"
+        [attr.aria-current]="currentPage() === page ? 'page' : null"
+        [attr.aria-label]="'Go to page ' + page"
+        (click)="goToPage(page)"
+      >
+        {{ page }}
+      </button>
+    }
+
+    <button
+      class="pagination-button"
+      type="button"
+      aria-label="Next page"
+      [disabled]="currentPage() === totalPages()"
+      (click)="goToNextPage()"
+    >
+      &rsaquo;
+    </button>
+  </nav>
+</div>

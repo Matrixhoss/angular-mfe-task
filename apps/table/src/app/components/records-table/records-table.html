@@ -1,0 +1,42 @@
+<div class="table-container">
+  <table class="records-table" aria-label="Employee records">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (record of records(); track record.id) {
+        <tr>
+          <td>{{ record.id }}</td>
+          <td>{{ record.name }}</td>
+          <td>{{ record.email }}</td>
+          <td>{{ record.department }}</td>
+          <td>
+            <span
+              class="status"
+              [class.status-inactive]="record.status === 'Inactive'"
+            >
+              {{ record.status }}
+            </span>
+          </td>
+          <td>
+            <button
+              class="actions-button"
+              type="button"
+              [attr.aria-label]="'Actions for ' + record.name"
+            >
+              <img src="/icons/more-vertical.svg" alt="" />
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,1 +1,25 @@
-<h1>This is the Table Page</h1>
+<section class="records-page">
+  <header class="records-header">
+    <h1>App One - Records</h1>
+
+    <button class="add-record-button" type="button">
+      <img src="/icons/add.svg" alt="" />
+      <span>Add Record</span>
+    </button>
+  </header>
+
+  @if (records(); as records) {
+    <app-records-table [records]="visibleRecords()" />
+
+    @if (records.length > 0) {
+      <app-pagination
+        [currentPage]="currentPage()"
+        [pageSize]="pageSize"
+        [totalRecords]="records.length"
+        (pageChange)="currentPage.set($event)"
+      />
+    }
+  } @else {
+    <p class="loading-message" role="status">Loading records...</p>
+  }
+</section>

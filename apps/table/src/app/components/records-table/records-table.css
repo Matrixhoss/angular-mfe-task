@@ -1,0 +1,61 @@
+.table-container {
+  overflow: hidden;
+  border: 1px solid #dfe3eb;
+  border-radius: 8px;
+}
+
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.records-table th,
+.records-table td {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.records-table th {
+  background: #f7f8fa;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.records-table td {
+  font-size: 0.9rem;
+}
+
+.records-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.status {
+  padding: 5px 12px;
+  display: inline-block;
+  border-radius: 16px;
+  background: #d8f5e1;
+  color: #177a32;
+  font-size: 0.8rem;
+}
+
+.status-inactive {
+  background: #fde0e0;
+  color: #c62828;
+}
+
+.actions-button {
+  padding: 4px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: #111827;
+  cursor: pointer;
+}
+
+.actions-button img {
+  width: 20px;
+  height: 20px;
+}
