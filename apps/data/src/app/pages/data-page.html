@@ -1,1 +1,55 @@
-<h1>This is the Data Page</h1>
+<section class="data-page">
+  <h1 class="data-page-title">App Two - Information</h1>
+
+  <div class="data-content">
+    <section class="company-card">
+      <h2>Company Information</h2>
+
+      <dl class="company-details">
+        <div class="company-row">
+          <dt>Company Name</dt>
+          <dd>{{ company.name }}</dd>
+        </div>
+
+        <div class="company-row">
+          <dt>Industry</dt>
+          <dd>{{ company.industry }}</dd>
+        </div>
+
+        <div class="company-row">
+          <dt>Headquarters</dt>
+          <dd>{{ company.headquarters }}</dd>
+        </div>
+
+        <div class="company-row">
+          <dt>Founded</dt>
+          <dd>{{ company.founded }}</dd>
+        </div>
+
+        <div class="company-row">
+          <dt>Employees</dt>
+          <dd>{{ company.employees }}</dd>
+        </div>
+
+        <div class="company-row">
+          <dt>Website</dt>
+          <dd>
+            <a [href]="company.websiteUrl"> {{ company.website }} </a>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="information-column">
+      <div class="information-card">
+        <h2>About Us</h2>
+        <p>{{ aboutUs }}</p>
+      </div>
+
+      <div class="information-card mission-card">
+        <h2>Our Mission</h2>
+        <p>{{ mission }}</p>
+      </div>
+    </section>
+  </div>
+</section>

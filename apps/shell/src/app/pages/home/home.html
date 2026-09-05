@@ -4,50 +4,26 @@
 </section>
 <section>
   <div class="stat-cards-container">
+    @for (statistic of statistics; track statistic.id) {
     <app-stat-card
-      icon="/icons/users.svg"
-      iconContainerColor="#2563eb"
-      [count]="120"
-      label="Total users"
-    ></app-stat-card>
-    <app-stat-card
-      icon="/icons/projects.svg"
-      iconContainerColor="#16a34a"
-      [count]="34"
-      label="Active Projects"
-    ></app-stat-card>
-    <app-stat-card
-      icon="/icons/tasks.svg"
-      iconContainerColor="#f97316"
-      [count]="12"
-      label="Tasks Pending"
-    ></app-stat-card>
-    <app-stat-card
-      icon="/icons/events.svg"
-      iconContainerColor="#4f46e5"
-      [count]="5"
-      label="Events Today"
-    ></app-stat-card>
+      [icon]="statistic.icon"
+      [iconContainerColor]="statistic.iconContainerColor"
+      [count]="statistic.count"
+      [label]="statistic.label"
+    />
+    }
   </div>
 </section>
 <section class="application-cards-container" aria-label="Applications">
+  @for (application of applications; track application.id) {
   <app-application-card
-    icon="/icons/table.svg"
-    title="App One"
-    subtitle="Table"
-    description="View and manage records in a data table."
-    route="/table"
-    actionLabel="Go to App One"
-    tone="blue"
+    [icon]="application.icon"
+    [title]="application.title"
+    [subtitle]="application.subtitle"
+    [description]="application.description"
+    [route]="application.route"
+    [actionLabel]="application.actionLabel"
+    [tone]="application.tone"
   />
-
-  <app-application-card
-    icon="/icons/document.svg"
-    title="App Two"
-    subtitle="Data"
-    description="View important information and details."
-    route="/data"
-    actionLabel="Go to App Two"
-    tone="green"
-  />
+  }
 </section>

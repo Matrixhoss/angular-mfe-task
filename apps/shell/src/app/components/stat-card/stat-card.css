@@ -12,7 +12,6 @@
   border: 1px solid #e2e5ec;
   border-radius: 7px;
   background: white;
-  box-shadow: 0 2px 6px rgb(15 23 42 / 6%);
 }
 
 .stat-card__icon-container {
@@ -33,7 +32,7 @@
 .stat-card__content {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
 .stat-card__count {
