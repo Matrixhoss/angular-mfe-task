@@ -1,0 +1,49 @@
+<aside class="sidebar">
+  <nav class="sidebar__nav" aria-label="Primary navigation">
+    <a
+      class="sidebar__link"
+      routerLink="/"
+      routerLinkActive="sidebar__link--active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <svg class="sidebar__icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 11.5 12 4l9 7.5" />
+        <path d="M5 10v10h14V10" />
+      </svg>
+
+      <span>Home</span>
+    </a>
+
+    <a
+      class="sidebar__link"
+      routerLink="/table"
+      routerLinkActive="sidebar__link--active"
+    >
+      <svg class="sidebar__icon" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <path d="M4 10h16M10 4v16" />
+      </svg>
+
+      <span class="sidebar__label">
+        <span>App One</span>
+        <small>(Table)</small>
+      </span>
+    </a>
+
+    <a
+      class="sidebar__link"
+      routerLink="/data"
+      routerLinkActive="sidebar__link--active"
+    >
+      <svg class="sidebar__icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 3h9l3 3v15H6z" />
+        <path d="M9 11h6M9 15h6" />
+      </svg>
+
+      <span class="sidebar__label">
+        <span>App Two</span>
+        <small>(Data)</small>
+      </span>
+    </a>
+  </nav>
+</aside>

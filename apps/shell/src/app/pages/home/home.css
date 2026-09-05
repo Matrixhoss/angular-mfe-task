@@ -1,1 +1,12 @@
+.stat-cards-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
+.application-cards-container {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}

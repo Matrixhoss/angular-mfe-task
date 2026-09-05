@@ -1,0 +1,14 @@
+<div class="stat-card">
+  <div
+    class="stat-card__icon-container"
+    [style.background-color]="iconContainerColor()"
+  >
+    <img class="stat-card__icon" [src]="icon()" alt="" />
+  </div>
+
+  <div class="stat-card__content">
+    <strong class="stat-card__count"> {{ count() }} </strong>
+
+    <span class="stat-card__label"> {{ label() }} </span>
+  </div>
+</div>

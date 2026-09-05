@@ -1,0 +1,21 @@
+<article
+  class="application-card"
+  [class.application-card--green]="tone() === 'green'"
+>
+  <div class="application-card__icon-container">
+    <img class="application-card__icon" [src]="icon()" alt="" />
+  </div>
+
+  <div class="application-card__content">
+    <h2 class="application-card__title">{{ title() }}</h2>
+    <p class="application-card__subtitle">({{ subtitle() }})</p>
+    <p class="application-card__description">{{ description() }}</p>
+
+    <a class="application-card__action" [routerLink]="route()">
+      <span>{{ actionLabel() }}</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </svg>
+    </a>
+  </div>
+</article>

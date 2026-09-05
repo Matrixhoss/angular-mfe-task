@@ -1,8 +1,10 @@
 import { Component } from "@angular/core";
-import { RouterLink, RouterOutlet, RouterLinkActive } from "@angular/router";
+import { RouterOutlet } from "@angular/router";
+import { TopBar } from "./layout/top-bar/top-bar";
+import { Sidebar } from "./layout/sidebar/sidebar";
 
 @Component({
-  imports: [RouterLink, RouterOutlet, RouterLinkActive],
+  imports: [RouterOutlet, TopBar, Sidebar],
   selector: "app-root",
   templateUrl: "./app.html",
   styleUrl: "./app.css",

@@ -1,0 +1,98 @@
+:host {
+  display: block;
+}
+
+.application-card {
+  min-height: 190px;
+  padding: 22px 24px;
+  display: flex;
+  gap: 18px;
+  border: 1px solid #d8e1f8;
+  border-radius: 10px;
+  background: #f4f7ff;
+}
+
+.application-card--green {
+  border-color: #d6eadc;
+  background: #f3faf5;
+}
+
+.application-card__icon-container {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #1746d1;
+}
+
+.application-card--green .application-card__icon-container {
+  background: #17923a;
+}
+
+.application-card__icon {
+  width: 30px;
+  height: 30px;
+}
+
+.application-card__content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.application-card__title,
+.application-card__subtitle,
+.application-card__description {
+  margin: 0;
+}
+
+.application-card__title {
+  color: #111827;
+  font-size: 1.12rem;
+  line-height: 1.3;
+}
+
+.application-card__subtitle {
+  margin-top: 2px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.application-card__description {
+  max-width: 30ch;
+  margin-top: 14px;
+  color: #374151;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.application-card__action {
+  margin-top: 16px;
+  padding: 10px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border-radius: 6px;
+  background: #1746d1;
+  color: #fff;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.application-card--green .application-card__action {
+  background: #17923a;
+}
+
+.application-card__action svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

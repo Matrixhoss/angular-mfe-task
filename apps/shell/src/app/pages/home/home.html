@@ -1,4 +1,53 @@
 <section>
-  <h2>Welcome to the application</h2>
-  <p>This page belongs to the Shell application.</p>
+  <h1>Welcome back, John!</h1>
+  <p>Here is an overview of your applications.</p>
+</section>
+<section>
+  <div class="stat-cards-container">
+    <app-stat-card
+      icon="/icons/users.svg"
+      iconContainerColor="#2563eb"
+      [count]="120"
+      label="Total users"
+    ></app-stat-card>
+    <app-stat-card
+      icon="/icons/projects.svg"
+      iconContainerColor="#16a34a"
+      [count]="34"
+      label="Active Projects"
+    ></app-stat-card>
+    <app-stat-card
+      icon="/icons/tasks.svg"
+      iconContainerColor="#f97316"
+      [count]="12"
+      label="Tasks Pending"
+    ></app-stat-card>
+    <app-stat-card
+      icon="/icons/events.svg"
+      iconContainerColor="#4f46e5"
+      [count]="5"
+      label="Events Today"
+    ></app-stat-card>
+  </div>
+</section>
+<section class="application-cards-container" aria-label="Applications">
+  <app-application-card
+    icon="/icons/table.svg"
+    title="App One"
+    subtitle="Table"
+    description="View and manage records in a data table."
+    route="/table"
+    actionLabel="Go to App One"
+    tone="blue"
+  />
+
+  <app-application-card
+    icon="/icons/document.svg"
+    title="App Two"
+    subtitle="Data"
+    description="View important information and details."
+    route="/data"
+    actionLabel="Go to App Two"
+    tone="green"
+  />
 </section>

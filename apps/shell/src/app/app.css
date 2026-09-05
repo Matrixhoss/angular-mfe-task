@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.shell-layout {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  min-height: calc(100vh - 52px);
+}
+
+.shell-content {
+  min-width: 0;
+  padding: 28px 32px;
+}

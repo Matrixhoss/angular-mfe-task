@@ -1,12 +1,9 @@
-<header>
-  <h1>Micro Frontend Dashboard</h1>
+<app-top-bar userName="John Smith" />
 
-  <nav>
-    <a routerLink="/table" routerLinkActive="active">Table</a>
-    <a routerLink="/data" routerLinkActive="active">Data</a>
-  </nav>
-</header>
+<div class="shell-layout">
+  <app-sidebar />
 
-<main>
-  <router-outlet />
-</main>
+  <main class="shell-content">
+    <router-outlet />
+  </main>
+</div>
