@@ -8,16 +8,44 @@
     </button>
   </header>
 
-  @if (records(); as records) {
-    <app-records-table [records]="visibleRecords()" />
+  <div class="table-filters" aria-label="Table filters">
+    <label>
+      <span>Search</span>
+      <input
+        type="search"
+        placeholder="Name, email, or department"
+        [value]="searchTerm()"
+        (input)="onSearch($event)"
+      />
+    </label>
 
-    @if (records.length > 0) {
+    <label>
+      <span>Status</span>
+      <select [value]="statusFilter()" (change)="onStatusChange($event)">
+        <option value="All">All statuses</option>
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </select>
+    </label>
+  </div>
+
+  @if (records()) {
+    @if (sortedRecords().length > 0) {
+      <app-records-table
+        [records]="visibleRecords()"
+        [sortColumn]="sortColumn()"
+        [sortDirection]="sortDirection()"
+        (sortChange)="sortBy($event)"
+      />
+
       <app-pagination
         [currentPage]="currentPage()"
         [pageSize]="pageSize"
-        [totalRecords]="records.length"
+        [totalRecords]="sortedRecords().length"
         (pageChange)="currentPage.set($event)"
       />
+    } @else {
+      <p class="empty-message">No matching records found.</p>
     }
   } @else {
     <p class="loading-message" role="status">Loading records...</p>

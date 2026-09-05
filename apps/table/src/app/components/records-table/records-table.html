@@ -2,11 +2,36 @@
   <table class="records-table" aria-label="Employee records">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Department</th>
-        <th>Status</th>
+        <th>
+          <button class="sort-button" type="button" (click)="sortChange.emit('id')">
+            ID
+            <span>{{ sortColumn() === 'id' ? (sortDirection() === 'asc' ? '↑' : '↓') : '' }}</span>
+          </button>
+        </th>
+        <th>
+          <button class="sort-button" type="button" (click)="sortChange.emit('name')">
+            Name
+            <span>{{ sortColumn() === 'name' ? (sortDirection() === 'asc' ? '↑' : '↓') : '' }}</span>
+          </button>
+        </th>
+        <th>
+          <button class="sort-button" type="button" (click)="sortChange.emit('email')">
+            Email
+            <span>{{ sortColumn() === 'email' ? (sortDirection() === 'asc' ? '↑' : '↓') : '' }}</span>
+          </button>
+        </th>
+        <th>
+          <button class="sort-button" type="button" (click)="sortChange.emit('department')">
+            Department
+            <span>{{ sortColumn() === 'department' ? (sortDirection() === 'asc' ? '↑' : '↓') : '' }}</span>
+          </button>
+        </th>
+        <th>
+          <button class="sort-button" type="button" (click)="sortChange.emit('status')">
+            Status
+            <span>{{ sortColumn() === 'status' ? (sortDirection() === 'asc' ? '↑' : '↓') : '' }}</span>
+          </button>
+        </th>
         <th>Actions</th>
       </tr>
     </thead>

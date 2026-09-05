@@ -1,5 +1,9 @@
-import { Component, input } from '@angular/core';
-import { EmployeeRecord } from '../../models/employee-record';
+import { Component, input, output } from '@angular/core';
+import {
+  EmployeeRecord,
+  SortColumn,
+  SortDirection,
+} from '../../models/employee-record';
 
 @Component({
   selector: 'app-records-table',
@@ -9,4 +13,7 @@ import { EmployeeRecord } from '../../models/employee-record';
 })
 export class RecordsTable {
   readonly records = input.required<readonly EmployeeRecord[]>();
+  readonly sortColumn = input.required<SortColumn>();
+  readonly sortDirection = input.required<SortDirection>();
+  readonly sortChange = output<SortColumn>();
 }

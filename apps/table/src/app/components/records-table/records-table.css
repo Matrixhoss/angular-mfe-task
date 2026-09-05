@@ -24,6 +24,22 @@
   font-weight: 600;
 }
 
+.sort-button {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.sort-button span {
+  color: #1746d1;
+}
+
 .records-table td {
   font-size: 0.9rem;
 }
