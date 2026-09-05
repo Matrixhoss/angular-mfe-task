@@ -23,6 +23,33 @@ The shell loads the remote routes at runtime:
 - RxJS and Angular signals
 - HTML and CSS
 
+## Completed Features
+
+### Core Features
+
+- Nx monorepo with one shell and two remote applications
+- Native Federation configuration for the shell and remotes
+- Shell routes that load the Table and Data applications at runtime
+- Shared shell layout with a header and navigation sidebar
+- Home page with summary statistics and links to both remotes
+- Table remote with mock employee data
+- Data remote with mock company information
+- Angular services that simulate API requests
+- Loading states while mock data is being requested
+- Reusable table, pagination, statistics card, and application card components
+- Responsive layouts for desktop and mobile screens
+- Direct route support for `/table` and `/data`
+
+### Bonus Features
+
+- Loading indicator while a remote application is being loaded
+- Error message when a remote cannot be loaded
+- Table pagination with five records per page
+- Search filtering by name, email, or department
+- Status filtering by active or inactive records
+- Sorting by ID, name, email, department, or status
+- Empty state when no table records match the filters
+
 ## Requirements
 
 - Node.js 22.22.3 or newer
