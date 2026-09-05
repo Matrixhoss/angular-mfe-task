@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
+import { toSignal } from "@angular/core/rxjs-interop";
+import { CompanyInformationService } from "../services/company-information.service";
 
 @Component({
   selector: "app-data-page",
@@ -7,19 +9,12 @@ import { Component } from "@angular/core";
   styleUrl: "./data-page.css",
 })
 export class DataPage {
-  readonly company = {
-    name: "Acme Corporation",
-    industry: "Technology",
-    headquarters: "New York, USA",
-    founded: 2010,
-    employees: "250+",
-    website: "www.acmecorp.com",
-    websiteUrl: "https://www.acmecorp.com",
-  };
+  private readonly companyInformationService = inject(
+    CompanyInformationService,
+  );
 
-  readonly aboutUs =
-    "Acme Corporation is a leading provider of innovative solutions to help businesses grow and succeed in the digital world. We are committed to delivering high-quality products and excellent customer service.";
-
-  readonly mission =
-    "To empower businesses with technology and drive positive change.";
+  readonly information = toSignal(
+    this.companyInformationService.getCompanyInformation(),
+    { initialValue: null },
+  );
 }

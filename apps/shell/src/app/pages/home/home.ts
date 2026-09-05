@@ -1,19 +1,10 @@
-import { Component } from "@angular/core";
-import {
-  ApplicationCard,
-  ApplicationCardTone,
-} from "../../components/application-card/application-card";
+import { Component, inject } from "@angular/core";
+import { toSignal } from "@angular/core/rxjs-interop";
+import { ApplicationCard } from "../../components/application-card/application-card";
 import { StatCard } from "../../components/stat-card/stat-card";
+import { DashboardService } from "../../services/dashboard.service";
 
-interface StatCardItem {
-  id: string;
-  icon: string;
-  iconContainerColor: string;
-  count: number;
-  label: string;
-}
-
-interface ApplicationCardItem {
+interface ApplicationItem {
   id: string;
   icon: string;
   title: string;
@@ -21,7 +12,7 @@ interface ApplicationCardItem {
   description: string;
   route: string;
   actionLabel: string;
-  tone: ApplicationCardTone;
+  tone: "blue" | "green";
 }
 
 @Component({
@@ -31,38 +22,9 @@ interface ApplicationCardItem {
   styleUrl: "./home.css",
 })
 export class Home {
-  readonly statistics: StatCardItem[] = [
-    {
-      id: "users",
-      icon: "/icons/users.svg",
-      iconContainerColor: "#2563eb",
-      count: 120,
-      label: "Total users",
-    },
-    {
-      id: "projects",
-      icon: "/icons/projects.svg",
-      iconContainerColor: "#16a34a",
-      count: 34,
-      label: "Active Projects",
-    },
-    {
-      id: "tasks",
-      icon: "/icons/tasks.svg",
-      iconContainerColor: "#f97316",
-      count: 12,
-      label: "Tasks Pending",
-    },
-    {
-      id: "events",
-      icon: "/icons/events.svg",
-      iconContainerColor: "#4f46e5",
-      count: 5,
-      label: "Events Today",
-    },
-  ];
+  private readonly dashboardService = inject(DashboardService);
 
-  readonly applications: ApplicationCardItem[] = [
+  readonly applications: readonly ApplicationItem[] = [
     {
       id: "table",
       icon: "/icons/table.svg",
@@ -84,4 +46,8 @@ export class Home {
       tone: "green",
     },
   ];
+
+  readonly dashboard = toSignal(this.dashboardService.getDashboard(), {
+    initialValue: null,
+  });
 }

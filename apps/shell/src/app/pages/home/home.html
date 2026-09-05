@@ -2,28 +2,35 @@
   <h1>Welcome back, John!</h1>
   <p>Here is an overview of your applications.</p>
 </section>
-<section>
-  <div class="stat-cards-container">
-    @for (statistic of statistics; track statistic.id) {
-    <app-stat-card
-      [icon]="statistic.icon"
-      [iconContainerColor]="statistic.iconContainerColor"
-      [count]="statistic.count"
-      [label]="statistic.label"
-    />
-    }
-  </div>
-</section>
+
+@if (dashboard(); as dashboard) {
+  <section>
+    <div class="stat-cards-container">
+      @for (statistic of dashboard.statistics; track statistic.id) {
+        <app-stat-card
+          [icon]="statistic.icon"
+          [iconContainerColor]="statistic.iconContainerColor"
+          [count]="statistic.count"
+          [label]="statistic.label"
+        />
+      }
+    </div>
+  </section>
+
+} @else {
+  <p role="status">Loading dashboard...</p>
+}
+
 <section class="application-cards-container" aria-label="Applications">
   @for (application of applications; track application.id) {
-  <app-application-card
-    [icon]="application.icon"
-    [title]="application.title"
-    [subtitle]="application.subtitle"
-    [description]="application.description"
-    [route]="application.route"
-    [actionLabel]="application.actionLabel"
-    [tone]="application.tone"
-  />
+    <app-application-card
+      [icon]="application.icon"
+      [title]="application.title"
+      [subtitle]="application.subtitle"
+      [description]="application.description"
+      [route]="application.route"
+      [actionLabel]="application.actionLabel"
+      [tone]="application.tone"
+    />
   }
 </section>
