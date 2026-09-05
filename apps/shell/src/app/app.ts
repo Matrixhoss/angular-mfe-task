@@ -18,7 +18,6 @@ import { Sidebar } from "./layout/sidebar/sidebar";
   styleUrl: "./app.css",
 })
 export class App {
-  protected title = "shell";
   private router = inject(Router);
 
   isRemoteLoading = signal(false);
