@@ -10,6 +10,18 @@
 }
 
 .shell-content {
+  position: relative;
   min-width: 0;
   padding: 28px 32px;
+}
+
+.route-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  background: white;
+  color: #1746d1;
+  font-weight: 600;
 }

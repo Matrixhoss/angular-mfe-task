@@ -4,6 +4,10 @@
   <app-sidebar />
 
   <main class="shell-content">
+    @if (isRemoteLoading()) {
+      <div class="route-loading" role="status">Loading application...</div>
+    }
+
     <router-outlet />
   </main>
 </div>
